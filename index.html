@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffe4ed">
+    <title>Gửi Mẹ Yêu - 20/10 ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Nhạc nền: đặt file MP3 trong thư mục music -->
+    <audio id="backgroundMusic" loop preload="metadata">
+        <source src="music/me-yeu.mp3" type="audio/mpeg">
+        Trình duyệt không hỗ trợ phát nhạc.
+    </audio>
+
+    <!-- Màn hình mở quà -->
+    <section id="opening" class="opening">
+        <div class="gift">🎁</div>
+        <p class="small-title">MỘT MÓN QUÀ NHỎ</p>
+        <h1>Dành tặng mẹ yêu ❤️</h1>
+        <p class="opening-text">
+            Con có một điều muốn nói với mẹ...
+        </p>
+        <button id="openButton" class="main-button">
+            Mở món quà 💗
+        </button>
+        <p class="music-note">🎵 Nhạc sẽ bắt đầu khi mẹ mở quà</p>
+    </section>
+
+    <!-- Hiệu ứng hoa phía trước -->
+    <div id="effects" aria-hidden="true"></div>
+
+    <!-- Nội dung lời chúc -->
+    <main id="card" class="card">
+        <div class="decor flowers-top">🌷 🌹 🌷</div>
+
+        <p class="subtitle">20 THÁNG 10 · NGÀY CỦA MẸ</p>
+
+        <h1 class="title">
+            Chúc mừng ngày<br>
+            <span>20/10</span>
+        </h1>
+
+        <div class="heart">💗</div>
+
+        <h2>Gửi mẹ yêu của con!</h2>
+
+        <p class="message">
+            Nhân ngày Phụ nữ Việt Nam 20/10,
+            con chúc mẹ luôn mạnh khỏe, vui vẻ,
+            bình an và lúc nào cũng nở nụ cười trên môi.
+        </p>
+
+        <p class="message">
+            Cảm ơn mẹ vì đã luôn yêu thương,
+            chăm sóc và dành cho con những điều tốt đẹp nhất.
+            Cảm ơn mẹ vì những hy sinh thầm lặng,
+            vì vòng tay ấm áp và tình yêu bao la mẹ dành cho con.
+        </p>
+
+        <p class="message highlight">
+            Con mong mẹ mỗi ngày đều hạnh phúc,
+            luôn được yêu thương và không phải lo nghĩ nhiều.
+            Con sẽ cố gắng học tập thật tốt để mẹ vui lòng.
+        </p>
+
+        <div class="bouquet">💐</div>
+
+        <p class="love-line">Con yêu mẹ rất nhiều! ❤️</p>
+
+        <p class="signature">
+            Món quà nhỏ, tình yêu lớn<br>
+            <strong>Con của mẹ 💕</strong>
+        </p>
+
+        <!-- Trình phát nhạc -->
+        <section class="music-player">
+            <div class="music-icon">🎵</div>
+
+            <div class="music-info">
+                <h3>Giai điệu dành tặng mẹ</h3>
+                <p id="musicStatus">Đang chờ mở món quà...</p>
+            </div>
+
+            <button id="playButton" class="play-button"
+                    aria-label="Phát hoặc tạm dừng nhạc">
+                ▶
+            </button>
+
+            <div class="progress-area">
+                <span id="currentTime">0:00</span>
+                <input
+                    id="seekBar"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    aria-label="Tua bài hát">
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="volume-area">
+                <span>🔈</span>
+                <input
+                    id="volumeBar"
+                    type="range"
+                    min="0"
+                    max="1"
+                    value="0.5"
+                    step="0.05"
+                    aria-label="Âm lượng">
+                <span>🔊</span>
+            </div>
+        </section>
+
+        <button id="flowerButton" class="main-button flower-button">
+            Gửi mẹ thêm hoa 🌹
+        </button>
+
+        <p class="ending">Chúc mẹ một ngày 20/10 thật hạnh phúc!</p>
+    </main>
+
+    <footer>Made with love · Dành tặng mẹ ngày 20/10 ❤️</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

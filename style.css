@@ -1,0 +1,374 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #e84c86;
+    --dark-pink: #ad285d;
+    --text: #754356;
+    --light-pink: #fff0f5;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px 15px;
+    text-align: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 10%, #ffe0eb, transparent 35%),
+        radial-gradient(circle at 90% 80%, #ffd6e5, transparent 35%),
+        linear-gradient(135deg, #fff5f8, #ffe6ef);
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.main-button {
+    border: none;
+    border-radius: 50px;
+    padding: 14px 26px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    background: linear-gradient(135deg, #f47ca6, #d52e70);
+    box-shadow: 0 8px 22px #cf397633;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px #cf397655;
+}
+
+.opening {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff1f6, #ffc8dc, #fff0f5);
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.opening.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.gift {
+    font-size: 90px;
+    margin-bottom: 20px;
+    animation: float 2s ease-in-out infinite;
+    filter: drop-shadow(0 8px 12px #c94d7b30);
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #bd4a77;
+    font-weight: bold;
+}
+
+.opening h1 {
+    font-family: Georgia, serif;
+    color: var(--dark-pink);
+    font-size: clamp(28px, 6vw, 45px);
+    margin: 16px 0;
+}
+
+.opening-text {
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+
+.music-note {
+    margin-top: 22px;
+    font-size: 13px;
+    color: #a44d70;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 720px);
+    margin: 20px auto;
+    padding: 42px clamp(18px, 6vw, 55px);
+    border: 2px solid #f5b2cc;
+    border-radius: 28px;
+    background: #ffffffed;
+    box-shadow: 0 20px 60px #b7447025;
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.decor {
+    font-size: 35px;
+    margin-bottom: 23px;
+}
+
+.subtitle {
+    color: #c04c7a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.title {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--dark-pink);
+    font-size: clamp(34px, 7vw, 58px);
+    line-height: 1.35;
+}
+
+.title span {
+    display: inline-block;
+    font-size: 1.4em;
+    color: var(--pink);
+    text-shadow: 2px 4px 12px #e34e8725;
+}
+
+.heart {
+    font-size: 45px;
+    margin: 20px 0;
+    animation: heartbeat 1.3s ease-in-out infinite;
+}
+
+.card h2 {
+    color: #bc3d70;
+    font-family: Georgia, serif;
+    font-size: clamp(22px, 4vw, 30px);
+    margin-bottom: 24px;
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.95;
+    margin: 17px 0;
+}
+
+.highlight {
+    color: #b62d66;
+    font-weight: 600;
+}
+
+.bouquet {
+    font-size: 70px;
+    margin: 22px 0 12px;
+    animation: sway 3s ease-in-out infinite;
+}
+
+.love-line {
+    color: #d63373;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 23px;
+    margin: 18px 0;
+}
+
+.signature {
+    font-family: Georgia, serif;
+    line-height: 1.9;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.signature strong {
+    color: #cf3976;
+    font-size: 22px;
+}
+
+/* Trình phát nhạc */
+.music-player {
+    display: grid;
+    grid-template-columns: 55px 1fr 45px;
+    gap: 12px;
+    align-items: center;
+    padding: 18px;
+    margin: 30px 0 25px;
+    border: 1px solid #f5c0d3;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fff4f8, #ffe4ee);
+    text-align: left;
+}
+
+.music-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #fbd0e1;
+    font-size: 27px;
+}
+
+.music-info h3 {
+    font-size: 15px;
+    color: #a82f60;
+}
+
+.music-info p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #936176;
+}
+
+.play-button {
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f47ca6, #d52e70);
+    color: white;
+    font-size: 17px;
+}
+
+.progress-area,
+.volume-area {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: #8b5a70;
+}
+
+.progress-area input,
+.volume-area input {
+    min-width: 0;
+    accent-color: #df4380;
+    cursor: pointer;
+}
+
+.progress-area input {
+    flex: 1;
+}
+
+.volume-area {
+    justify-content: center;
+}
+
+.volume-area input {
+    width: 120px;
+}
+
+.flower-button {
+    margin-bottom: 22px;
+}
+
+.ending {
+    font-family: Georgia, serif;
+    color: #c04c7a;
+    font-style: italic;
+    font-size: 15px;
+}
+
+footer {
+    margin: 30px auto 10px;
+    font-size: 13px;
+    color: #a55373;
+}
+
+/* Hoa rơi phía trước giao diện */
+#effects {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    top: -60px;
+    will-change: transform;
+    animation: fall linear forwards;
+    filter: drop-shadow(0 3px 3px #b94c6b20);
+}
+
+@keyframes fall {
+    0% {
+        transform: translate3d(0, -5vh, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(35px, 50vh, 0) rotate(180deg);
+    }
+    100% {
+        transform: translate3d(-25px, 110vh, 0) rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .card {
+        padding-top: 32px;
+        padding-bottom: 30px;
+        border-radius: 22px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .music-player {
+        grid-template-columns: 45px 1fr 40px;
+        gap: 9px;
+        padding: 13px;
+    }
+
+    .music-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .music-info h3 {
+        font-size: 13px;
+    }
+
+    .music-info p {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
